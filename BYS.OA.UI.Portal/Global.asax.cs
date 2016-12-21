@@ -23,5 +23,9 @@ namespace BYS.OA.UI.Portal
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        //protected void Application_Eror()
+        //{
+            
+        //}
     }
 }
