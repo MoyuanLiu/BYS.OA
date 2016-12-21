@@ -12,6 +12,7 @@ namespace BYS.OA.UI.Portal.Controllers
         //
         // GET: /OrderInfo/
         public IOrderInfoService OrderInfoService { get; set; }
+        //
         public ActionResult Index()
         {
             ViewData.Model = OrderInfoService.GetEntities(u=>true).ToList();
