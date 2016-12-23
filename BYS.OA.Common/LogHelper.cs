@@ -25,16 +25,24 @@ namespace BYS.OA.Common
             {
                 lock (ExceptionStringQueue)
                 {
-                    string str = ExceptionStringQueue.Dequeue();
-                    //变化点：有可能写到日志文件，有可能写到数据库里面去。有可能多个地方去
-                    //执行委托方法,把异常信息写到委托里面去。
-                    //WriteLogDelFunc(str);
-                    //ILogWriter writer = new TextFileWriter();
-                    //writer.WriteLogInfo(str);
-                    foreach (var logWriter in LogWriterList)
+                    if (ExceptionStringQueue.Count > 0)
                     {
-                        logWriter.WriteLogInfo(str);
+                        string str = ExceptionStringQueue.Dequeue();
+                        //变化点：有可能写到日志文件，有可能写到数据库里面去。有可能多个地方去
+                        //执行委托方法,把异常信息写到委托里面去。
+                        //WriteLogDelFunc(str);
+                        //ILogWriter writer = new TextFileWriter();
+                        //writer.WriteLogInfo(str);
+                        foreach (var logWriter in LogWriterList)
+                        {
+                            logWriter.WriteLogInfo(str);
+                        }
                     }
+                    else
+                    {
+                        Thread.Sleep(30);
+                    }
+                    
                 }
             });
         }
