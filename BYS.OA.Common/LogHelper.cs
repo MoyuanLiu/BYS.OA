@@ -19,8 +19,9 @@ namespace BYS.OA.Common
             //WriteLogDelFunc = new WriteLogDel(WriteLogToFile);
             //WriteLogDelFunc += WriteLogToDb;
             //把从队列中获取错误消息写写到 日志文件里面去
-            LogWriterList.Add(new TextFileWriter());
-            LogWriterList.Add(new SqlServerWriter());
+            //LogWriterList.Add(new TextFileWriter());
+            //LogWriterList.Add(new SqlServerWriter());
+            LogWriterList.Add(new Log4NetWritter());
             ThreadPool.QueueUserWorkItem(o=> 
             {
                 lock (ExceptionStringQueue)

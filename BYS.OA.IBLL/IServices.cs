@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BYS.OA.IBLL
 {
-//public partial interface IActionInfoService:IBaseService<ActionInfo>
-//{}
-//public partial interface IOrderInfoService:IBaseService<OrderInfo>
-//{}
-//public partial interface IRoleInfoService:IBaseService<RoleInfo>
-//{}
-//public partial interface IUserInfoService:IBaseService<UserInfo>
-//{}
+public partial interface IActionInfoService:IBaseService<ActionInfo>
+{}
+public partial interface IOrderInfoService:IBaseService<OrderInfo>
+{}
+public partial interface IRoleInfoService:IBaseService<RoleInfo>
+{}
+public partial interface IUserInfoService:IBaseService<UserInfo>
+{}
 }

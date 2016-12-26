@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BYS.OA.IBLL
 {
-    public interface IUserInfoService:IBaseService<UserInfo>
+    public partial interface IUserInfoService:IBaseService<UserInfo>
     {
     }
 }

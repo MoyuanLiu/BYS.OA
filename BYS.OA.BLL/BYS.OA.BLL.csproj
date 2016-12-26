@@ -41,6 +41,11 @@
   <ItemGroup>
     <Compile Include="BaseService.cs" />
     <Compile Include="OrderInfoService.cs" />
+    <Compile Include="Services.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,12 +74,7 @@
   <ItemGroup>
     <Content Include="Services.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Services.txt</LastGenOutput>
-    </Content>
-    <Content Include="Services.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Services.tt</DependentUpon>
+      <LastGenOutput>Services.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

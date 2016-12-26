@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace BYS.OA.Common
     {
         public void WriteLogInfo(string txt)
         {
-            throw new NotImplementedException();
+            ILog logWrite = log4net.LogManager.GetLogger("Demo");
+            logWrite.Error(txt);
         }
     }
 }

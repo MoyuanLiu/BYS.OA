@@ -16,7 +16,7 @@ namespace BYS.OA.UI.Portal
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "OrderInfo", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

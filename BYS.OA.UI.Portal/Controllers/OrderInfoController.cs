@@ -15,6 +15,7 @@ namespace BYS.OA.UI.Portal.Controllers
         //
         public ActionResult Index()
         {
+            throw new Exception("dddddddd");
             ViewData.Model = OrderInfoService.GetEntities(u=>true).ToList();
             return View();
         }
