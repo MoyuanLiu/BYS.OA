@@ -60,6 +60,10 @@ namespace BYS.OA.Common
             lock (ExceptionStringQueue)
             {
                 ExceptionStringQueue.Enqueue(exceptionText);
+                //if (ExceptionStringQueue.Count>100)
+                //{
+                //    //...
+                //}
             }
         }
     }

@@ -22,10 +22,9 @@ namespace BYS.OA.UI.Portal
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //从配置文件读取log4net配置 
+            log4net.Config.XmlConfigurator.Configure();
         }
-        //protected void Application_Eror()
-        //{
-            
-        //}
+        
     }
 }
