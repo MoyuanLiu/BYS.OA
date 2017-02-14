@@ -22,7 +22,14 @@ namespace BYS.OA.UI.Portal.Controllers
             //验证用户名密码
             string name = Request["LoginName"];
             string pwd = Request["LoginPwd"];
-
+            short delNormal = (short)BYS.OA.Model.Enum.DelFlagEnum.Normal;
+            var userInfo = UserInfoService.GetEntities(u => u.UName == name && u.Pwd == pwd && u.DelFlag == delNormal).FirstOrDefault();
+            if (userInfo==null)
+            {
+                return Content("用户名或密码错误！");
+            }
+            Session["loginUser"] = userInfo;
+            return Content("Ok");
         }
         #endregion
 

@@ -16,23 +16,26 @@
     <link href='~/Scripts/StyleSheet1.css' rel='stylesheet' type='text/css'>
     <!--//webfonts-->
     <script src="http://ajax.useso.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        //登录成功之后执行此方法
+        function afterLogin(data)
+        {
+            if (data == "Ok") {
+                //登录成功
+                window.location.href = "/UserInfo/Index";
+            }
+            else
+            {
+                alert(data);
+            }
+        }
+    </script>
 </head>
 <body>
-    @Ajax.BeginForm()
+    @using (Ajax.BeginForm("ProcessLogin", "UserLogin", new AjaxOptions() { OnSuccess = "afterLogin",HttpMethod="Post" }))
     {
-
-     }
-    <script>
-$(document).ready(function(c) {
-	$('.close').on('click', function(c){
-		$('.login-form').fadeOut('slow', function(c){
-	  		$('.login-form').remove();
-		});
-	});
-});
-    </script>
-    <!--SIGN UP-->
-    <h1>klasikal Login Form</h1>
     <div class="login-form">
         <div class="close"> </div>
         <div class="head-info">
@@ -44,16 +47,28 @@ $(document).ready(function(c) {
         <div class="avtar">
             <img src="~/images/avtar.png" />
         </div>
-        <form>
+        
             <input id="LoginName" type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
             <div class="key">
                 <input id="LoginPwd" type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
             </div>
-        </form>
+        
         <div class="signin">
             <input type="submit" value="Login">
         </div>
     </div>
+     }
+    <script>
+$(document).ready(function(c) {
+	$('.close').on('click', function(c){
+		$('.login-form').fadeOut('slow', function(c){
+	  		$('.login-form').remove();
+		});
+	});
+});
+    </script>
+    <!--SIGN UP-->
+    
     <div class="copy-rights">
         <p>Copyright &copy; 2016.Company name All rights reserved.</p>
     </div>

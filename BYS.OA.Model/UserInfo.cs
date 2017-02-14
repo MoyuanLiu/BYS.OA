@@ -22,6 +22,9 @@ namespace BYS.OA.Model
     
         public int Id { get; set; }
         public string UName { get; set; }
+        public string Pwd { get; set; }
+        public string ShowName { get; set; }
+        public short DelFlag { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderInfo> OrderInfoes { get; set; }
